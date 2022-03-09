@@ -1,0 +1,139 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;   
+}
+body{
+    display: grid;
+    color: white;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 40px;
+    grid-template-areas: "header header"
+                         "main section"
+                         "footer footer";
+    min-height: 100vh;                  
+}
+
+header{
+   display: grid;
+   grid-area: header;
+   background: violet;
+   align-items: center;
+   justify-items: center;
+}
+
+main{
+   display: grid;
+   grid-area: main;
+   background:yellowgreen;
+   align-items: center;
+   justify-items: center;
+}
+
+div{
+    display: grid;
+    background: red;
+    width: 200px;
+    height: 300px;
+    align-items: center;
+    justify-items: center;  
+}
+
+div img{
+    width: 100px;
+    margin-top: -70px;
+    border-radius: 50%;
+    border: 3px solid blue;
+    transition-property: all;
+    transition-duration: 2.5s;
+    animation-name: moverpelota;
+    animation-duration: 3s;
+
+    
+
+}
+
+div img:hover{
+    border-color: red;
+    margin-top: -100px;
+    width: 200px;
+}
+
+div p{
+  text-align: center;
+  margin-top: 100px;
+}
+
+section{
+   display: grid;
+   grid-area: section;
+   background:rgb(48, 10, 216);
+   align-items: center;
+   justify-items: center;
+}
+section button{
+    background: orange;
+    color: white;
+    width: 150px;
+    height: 50px;
+}
+section button:hover{
+    background: green;
+}
+
+#animado{
+    animation-name: boton-animado;
+    animation-duration: 3s;
+    animation-iteration-count: 2; /* cuantas veces hace la animacion*/
+}
+
+footer{
+   display: grid;
+   grid-area: footer;
+   background:turquoise;
+   align-items: center;
+   justify-items: center;
+}
+
+.alta{
+    color: red;
+}
+
+.baja{
+    color: orange;
+}
+
+@keyframes boton-animado{
+   0%{
+       Opacity: 1;
+   }
+   50% {Opacity: 0;
+        transform: rotate(360deg);
+        
+   }
+   75% {Opacity: 1;
+        transform:translateX(200px)
+    
+   }
+   100% {Opacity: 1;}
+}
+
+@keyframes moverpelota{
+    50%{
+        transform: translateY(-400px)
+    }
+   
+}
+
+@media(max-width: 900px){
+body{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr 40px;
+    grid-template-areas: "header"
+                         "main"
+                         "section"
+                         "footer";
+    min-height: 100vh;                  
+}
+
+}
